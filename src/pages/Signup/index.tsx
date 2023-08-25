@@ -21,7 +21,6 @@ const Signup: React.FC = () => {
                                 password: ''
                             });
     const [confirmPassword, setConfirmPassword] = useState<string>('');
-    const [errorMessage, setErrorMessage] = useState<string | null>(null);
   
     function updateModel(e: ChangeEvent<HTMLInputElement>) {
         setModel({
@@ -61,7 +60,6 @@ const Signup: React.FC = () => {
             password: ''
         });
         setConfirmPassword('');
-        setErrorMessage(null);
     }
 
     return (
