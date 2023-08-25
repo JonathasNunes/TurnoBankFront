@@ -1,5 +1,5 @@
 import  React, { ChangeEvent, useContext, useState } from "react";
-import { Alert, Button, Form } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/Auth/AuthContext";
 import { AxiosError } from "axios";
@@ -22,7 +22,7 @@ const Home: React.FC = () => {
             try {
                 const isLogged = await auth.signin(email, password);
                 if (isLogged) {
-                    if (email == "admin@admin.com") {
+                    if (email === "admin@admin.com") {
                         navigate('/transactions');
                     } else {
                         navigate('/account');

@@ -24,10 +24,10 @@ const Header: React.FC = () => {
             <Nav className="me-auto">
                 {!auth.user &&<Nav.Item as={Link} className="nav-link" to="/">Login</Nav.Item>}
                 <Nav.Item as={Link} className="nav-link" to="/signup">Cadastro</Nav.Item>
-                {auth.user && auth.user.type=='customer' && <Nav.Item as={Link} className="nav-link" to="/account">Conta</Nav.Item>}
-                {auth.user && auth.user.type=='customer' && <Nav.Item as={Link} className="nav-link" to="/deposit">Deposito</Nav.Item>}
-                {auth.user && auth.user.type=='customer' && <Nav.Item as={Link} className="nav-link" to="/purchase">Compra</Nav.Item>}
-                {auth.user && auth.user.type=='admin' && <Nav.Item as={Link} className="nav-link" to="/transactions">Depósitos</Nav.Item>}
+                {auth.user && auth.user.type==='customer' && <Nav.Item as={Link} className="nav-link" to="/account">Conta</Nav.Item>}
+                {auth.user && auth.user.type==='customer' && <Nav.Item as={Link} className="nav-link" to="/deposit">Deposito</Nav.Item>}
+                {auth.user && auth.user.type==='customer' && <Nav.Item as={Link} className="nav-link" to="/purchase">Compra</Nav.Item>}
+                {auth.user && auth.user.type==='admin' && <Nav.Item as={Link} className="nav-link" to="/transactions">Depósitos</Nav.Item>}
                 {auth.user && <Nav.Item as={Link} className="nav-link" to="#" onClick={handleLogout}>Sair</Nav.Item>}
             </Nav>
             </Navbar.Collapse>

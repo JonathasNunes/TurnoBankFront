@@ -65,7 +65,7 @@ const TransactionsList: React.FC = () => {
     const handleApprove = async (item: ITransaction) => {
 
         try {
-            const res =  await api.put('/transaction', {id:item.id, approval: "approved"});
+            await api.put('/transaction', {id:item.id, approval: "approved"});
             toast.success("Depósito Aprovado");
             getTransactions();
         } catch (error) {
@@ -80,7 +80,7 @@ const TransactionsList: React.FC = () => {
     const handleReject = async (item: ITransaction) => {
 
         try {
-            const res =  await api.put('/transaction', {id:item.id, approval: "rejected"});
+            await api.put('/transaction', {id:item.id, approval: "rejected"});
             toast.success("Depósito Rejeitado");
             getTransactions();
         } catch (error) {
@@ -145,7 +145,7 @@ const TransactionsList: React.FC = () => {
                     })}
                     </tbody>
                 </Table>}
-                {transactions.length==0 && <div>Sem depósitos disponíveis</div>}
+                {transactions.length===0 && <div>Sem depósitos disponíveis</div>}
                 <TransactionModal
                     show={showModal}
                     onClose={handleModalClose}

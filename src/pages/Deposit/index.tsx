@@ -36,7 +36,7 @@ const Deposit: React.FC = () => {
                 formData.append("image_name", image);
             }
 
-            const response = await api.post("/transaction", formData);
+            await api.post("/transaction", formData);
             toast.success("Depósito realizado com sucesso!");
             
             setAmount("");

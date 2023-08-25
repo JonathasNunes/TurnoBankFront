@@ -25,7 +25,7 @@ const Purchase: React.FC = () => {
             formData.append("amount", amount);
             formData.append("description", description);
 
-            const response = await api.post("/purchase", formData);
+            await api.post("/purchase", formData);
             toast.success("Compra realizada com sucesso!");
             
             setAmount("");

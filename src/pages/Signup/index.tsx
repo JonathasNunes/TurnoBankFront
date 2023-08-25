@@ -1,5 +1,5 @@
 import  React, { ChangeEvent, useState } from "react";
-import { Alert, Button, Form } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 import { AxiosError } from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -22,9 +22,7 @@ const Signup: React.FC = () => {
                             });
     const [confirmPassword, setConfirmPassword] = useState<string>('');
     const [errorMessage, setErrorMessage] = useState<string | null>(null);
-    const [successMessage, setSuccessMessage] = useState<string | null>(null);
   
-
     function updateModel(e: ChangeEvent<HTMLInputElement>) {
         setModel({
             ... model,
@@ -45,7 +43,7 @@ const Signup: React.FC = () => {
         }
       
         try {
-            const response = await api.post('/user', model);
+            await api.post('/user', model);
             toast.success("Conta criada com sucesso!");
             cleanForm();
         } catch (error) {
@@ -75,9 +73,6 @@ const Signup: React.FC = () => {
             </div>
             <br />
             <div className="container">
-                {errorMessage && <Alert variant="danger">{errorMessage}</Alert>}
-                {successMessage && <Alert variant="success">{successMessage}</Alert>}
-
                 <Form onSubmit={onSubmit}>
                     <Form.Group className="mb-3">
                         <Form.Label htmlFor="name">Nome</Form.Label>
