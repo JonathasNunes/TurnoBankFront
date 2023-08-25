@@ -44,7 +44,7 @@ const Home: React.FC = () => {
             <ToastContainer autoClose={3000} position={toast.POSITION.TOP_RIGHT} />
             <br />
             <div className="signup-header">
-                <h3>Login</h3>
+                <h3>Login </h3>
             </div>
             <br />
             <div className="container">
