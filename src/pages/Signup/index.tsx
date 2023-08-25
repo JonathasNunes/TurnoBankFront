@@ -24,7 +24,7 @@ const Signup: React.FC = () => {
   
     function updateModel(e: ChangeEvent<HTMLInputElement>) {
         setModel({
-            ... model,
+            ...model,
             [e.target.name]: e.target.value
         });
     }
